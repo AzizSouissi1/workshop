@@ -1,0 +1,7 @@
+<tbody *ngFor="let invoice of list">
+    <div>
+
+        <ul>Facture {{invoice.idFacture}} : <a [routerLink]="['Invoice',invoice.idFacture,invoice.active]">Details</a>
+        </ul>
+
+    </div>

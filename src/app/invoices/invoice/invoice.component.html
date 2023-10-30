@@ -1,0 +1,16 @@
+<div *ngIf="invoice && invoice.active">
+    <p>ID Facture: {{ invoice.idFacture }}</p>
+    <hr>
+    <p>Montant Facture: {{ invoice.montantFacture }}</p>
+    <hr>
+    <p>Montant Remise: {{ invoice.montantRemise }}</p>
+    <hr>
+    <p>Date Facture: {{ invoice.dateFacture }}</p>
+    <hr>
+    <p>Active: {{ invoice.active }}</p>
+    <hr>
+</div>
+<div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+</div>
+<button [routerLink]="['/maininvoice']">Retour</button>
