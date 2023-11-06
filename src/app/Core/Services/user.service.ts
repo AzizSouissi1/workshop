@@ -27,6 +27,4 @@ export class UserService {
     let URL2 = this.URL + "/" + id;
     return this.http.delete<User>(URL2)
   }
-
-
 }
