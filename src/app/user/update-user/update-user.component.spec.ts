@@ -8,9 +8,9 @@ describe('UpdateUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UpdateUserComponent ]
+      declarations: [UpdateUserComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(UpdateUserComponent);
     component = fixture.componentInstance;
@@ -20,4 +20,5 @@ describe('UpdateUserComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

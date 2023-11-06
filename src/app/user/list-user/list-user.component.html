@@ -1,5 +1,4 @@
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
 <div class="container">
 	<button routerLink="/addUser">add</button>
 	<div class="row">
@@ -8,52 +7,48 @@
 				<div class="table-responsive">
 					<table class="table user-list">
 						<thead>
-
 							<tr>
 								<th><span>User</span></th>
 								<th><span>Created</span></th>
 								<th class="text-center"><span>Status</span></th>
 								<th><span>Email</span></th>
-
-
 								<th>&nbsp;</th>
-
-
 							</tr>
-
 							<router-outlet></router-outlet>
 						</thead>
-
-						<tbody *ngFor="let item of filteredUsers ; let i = index">
-							<tr *ngIf="item.accountCategory==searchItem || !searchItem">
+						<tbody *ngFor="let item of filteredUsers; let i = index">
+							<tr *ngIf="item.accountCategory == searchItem || !searchItem">
 								<td>
-									<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-									<a href="#" class="user-link">{{item.firstName}}</a>
-									<span class="user-subhead">{{item.profession}}</span>
+									<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
+									<a href="#" class="user-link">{{ item.firstName }}</a>
+									<span class="user-subhead">{{ item.profession }}</span>
 								</td>
 								<td>
-									{{item.birthDate}}
+									{{ item.birthDate }}
 								</td>
 								<td class="text-center">
 									<span class="label label-default">Inactive</span>
 								</td>
 								<td>
-									<a href="#">{{item.email}} {{item.id}}</a>
+									<a href="#">{{ item.email }} {{ item.id }}</a>
 								</td>
-								<td style="width: 20%;">
+								<td style="width: 20%">
 									<li class="list-inline-item">
 										<button class="btn btn-primary btn-sm rounded-0" type="button"
-											data-toggle="tooltip" data-placement="top" title="Add"><i
-												class="fa fa-table"></i></button>
+											data-toggle="tooltip" data-placement="top" title="Add">
+											<i class="fa fa-table"></i>
+										</button>
 									</li>
 								</td>
 								<td>
 									<button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip"
-										data-placement="top" title="Edit" [routerLink]="['/editUser',item.id]"
-										[queryParams]="{'fid':item.id}"><i class="fa fa-edit"></i></button>
+										data-placement="top" title="Edit" [routerLink]="['/editUser', item.id]"
+										[queryParams]="{ fid: item.id }">
+										<i class="fa fa-edit"></i>
+									</button>
 								</td>
 								<td>
-									<button type="button" class=" remove " (click)="onDeleteTask(item.id)">
+									<button type="button" class="remove" (click)="onDeleteTask(item.id)">
 										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 											fill="currentcolor" class="bi bi-trash" viewBox="0 0 16 16">
 											<path
@@ -61,12 +56,13 @@
 											<path
 												d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
 										</svg>
-
 									</button>
-
-
-
-
 								</td>
 							</tr>
 						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

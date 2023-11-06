@@ -54,18 +54,6 @@
       "password": "test",
       "picture": "https://bootdey.com/img/Content/avatar/avatar5.png",
       "profession": "Software Engineer"
-    },
-    {
-      "id": "10",
-      "firstName": "zxy",
-      "lastName": " Abc",
-      "birthDate": "1999-06-30",
-      "email": "abs@aaa.com",
-      "password": "test",
-      "profession": "etudiant",
-      "accountCategory": "Admin",
-      "picture": "https://bootdey.com/img/Content/avatar/avatar3.png",
-      "status": ""
     }
   ]
 }

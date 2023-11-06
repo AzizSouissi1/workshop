@@ -18,7 +18,7 @@ export class AddUserComponent implements OnInit {
   add(form: NgForm) {
     if (form.valid) {
       const user = {
-        id: "10",
+        id: "134",
         firstName: form.value.fn,
         lastName: form.value.ln,
         birthDate: form.value.birthDate,
