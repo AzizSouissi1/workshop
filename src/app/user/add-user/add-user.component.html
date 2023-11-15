@@ -1,35 +1,38 @@
 <div class="form">
-  <form #addForm="ngForm" (ngSubmit)="add(addForm)">
+  <form #addForm='ngForm' (ngSubmit)="add(addForm)">
     <div class="form-group">
       <label for="exampleInputEmail1">First Name </label>
-      <input type="email" class="form-control" ngModel id="fn" name="fn" #fn="ngModel" required
-        pattern="[a-zA-Z]{3,}" />
-      <small class="text-danger" *ngIf="fn.invalid && fn.touched">First Name is required and should contain at least 3
-        letters.</small>
+      <input type="email" class="form-control" ngModel id="fn" name="fn" #fn="ngModel" required pattern="[a-zA-Z]{3,}">
+      <small class="text-danger" *ngIf="fn.invalid && fn.touched">First Name is required and
+        should contain at least 3 letters.</small>
+      <tr></tr>
       <label for="exampleInputEmail1">Last Name </label>
       <input type="text" class="form-control" ngModel="" id="ln" name="ln" #ln="ngModel" required
-        pattern="[a-zA-Z]{3,}" />
-      <small class="text-danger" *ngIf="ln.invalid && ln.touched">Last Name is required and should contain at least 3
-        letters.</small>
+        pattern="[a-zA-Z]{3,}">
+      <small class="text-danger" *ngIf="ln.invalid && ln.touched">Last Name is required and
+        should
+        contain at least 3 letters.</small>
       <label class="control-label" for="date">Birthdate</label>
       <input class="form-control" id="birthdate" ngModel name="birthdate" placeholder="MM/DD/YYY" type="text"
-        #birthdate="ngModel" required />
-      <small class="text-danger" *ngIf="birthdate.invalid && birthdate.touched">wrong
-      </small>
+        #birthdate="ngModel" required>
+      <small class="text-danger" *ngIf="birthdate.invalid && birthdate.touched">wrong</small>
       <label for="exampleInputEmail1">email </label>
       <input type="email" class="form-control" id="email" name="email" ngModel #email="ngModel" required
-        pattern="^[a-zA-Z0-9._-]+@gmail.com" />
+        pattern="^[a-zA-Z0-9._-]+@gmail.com">
       <small class="text-danger" *ngIf="email.invalid && email.touched"></small>
       <label for="exampleInputEmail1">Password </label>
-      <input type="password" class="form-control" id="password" name="password" ngModel #password="ngModel" />
-      <small class="text-danger" *ngIf="password.invalid && password.touched">wrong password</small>
-      <label for="exampleInputEmail1">Profession</label>
+      <input type="password" class="form-control" id="password" name="password" ngModel #password="ngModel" required
+        pattern="^[a-zA-Z0-9]{8,}?">
+      <small class="text-danger" *ngIf="password.invalid && password.touched">wrong
+        password</small>
+      <label for="exampleInputEmail1">Profession </label>
       <select class="form-select" aria-label="Default select example" name="profession" id="profession" ngModel
         required>
-        <option selected>Selectionner votre Type</option>
         <option value="1">Customer</option>
       </select>
       <button type="submit" [disabled]="addForm.invalid">Save</button>
+
     </div>
+
   </form>
 </div>

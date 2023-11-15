@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../Core/Models/user';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/Core/Services/user.service';
 
 @Component({
@@ -14,13 +14,16 @@ export class ListUserComponent implements OnInit {
   filteredUsers: User[] = [];
   user: User[] = [];
 
-  constructor(private route: ActivatedRoute, private userS: UserService, private r: Router) { }
+  constructor(private route: ActivatedRoute, private userS: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.categoryFromUrl = params['category'];
       this.filterUsersByCategory();
-      this.userS.getAllusers().subscribe(data => this.filteredUsers = data);
+      this.userS.getAllusers().subscribe(data => {
+        this.user = data;
+        this.filteredUsers = this.user;
+      });
     });
   }
 
@@ -32,12 +35,15 @@ export class ListUserComponent implements OnInit {
     }
   }
 
-  onDeleteTask(index: String) {
-    console.log(index);
-    this.userS.deleteUser(index).subscribe(() => {
-      alert('deleted Successfully!')
-        ;
-    })
-  }
+  onDeleteTask(id: number) {
+    const idString = id.toString();
+    this.userS.deleteUser(idString).subscribe(() => {
+      alert('Deleted Successfully!');
 
+      this.userS.getAllusers().subscribe(data => {
+        this.user = data;
+        this.filteredUsers = this.user;
+      });
+    });
+  }
 }

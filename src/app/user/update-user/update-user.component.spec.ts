@@ -20,5 +20,4 @@ describe('UpdateUserComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
 });

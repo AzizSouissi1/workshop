@@ -1,2 +1,31 @@
-<p>update-user works!</p>
-{{id}}
+<!-- Your HTML template remains the same -->
+
+<div class="form">
+    <form [formGroup]="updateForm" *ngIf="updateForm" (ngSubmit)="update()" class="form-group">
+        <div class="form-group">
+            <label for="fn">First Name</label>
+            <input type="text" class="form-control" id="fn" name="fn" formControlName="fn">
+
+            <label for="ln">Last Name</label>
+            <input type="text" class="form-control" id="ln" name="ln" formControlName="ln">
+
+            <label for="birthdate">Birthdate</label>
+            <input type="text" class="form-control" id="birthdate" name="birthdate" formControlName="birthDate"
+                autocomplete="birth-date">
+
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" formControlName="email"
+                autocomplete="email">
+
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" formControlName="password"
+                autocomplete="current-password">
+
+            <label for="profession">Profession</label>
+            <input type="text" class="form-control" id="profession" name="profession" formControlName="profession"
+                autocomplete="text">
+
+            <button type="submit">Save</button>
+        </div>
+    </form>
+</div>

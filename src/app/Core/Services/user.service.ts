@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { catchError, throwError } from 'rxjs';
 import { User } from 'src/app/Core/Models/user';
 
 @Injectable()
@@ -16,9 +17,15 @@ export class UserService {
   getAllusers() {
     return this.http.get<User[]>(this.URL);
   }
-  getUserById(id: String) {
-    return this.http.get<User>(this.URL + '/' + id);
+  getUserById(id: number) {
+    return this.http.get<User>(`${this.URL}/${id}`).pipe(
+      catchError(error => {
+        console.error('Error fetching user by ID:', error);
+        return throwError(error);
+      })
+    );
   }
+
   AddUser(u: User) {
     return this.http.post<User>(this.URL, u, this.httpOtions)
 
@@ -32,4 +39,6 @@ export class UserService {
     let URL2 = this.URL + "/" + id;
     return this.http.delete<User>(URL2)
   }
+
+
 }

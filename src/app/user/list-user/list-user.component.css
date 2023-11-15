@@ -19,6 +19,7 @@ body {
   font-style: italic;
 }
 
+/* TABLES */
 .table {
   border-collapse: separate;
 }
@@ -161,4 +162,76 @@ body {
 .table-stats .status-social-icon {
   font-size: 1.9em;
   vertical-align: bottom;
+}
+/* Add this CSS to your styles.css or in a style tag in your HTML file */
+
+.container {
+  margin-top: 20px;
+}
+
+.user-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.user-list th,
+.user-list td {
+  padding: 12px;
+  text-align: left;
+}
+
+.user-list th {
+  background-color: #f2f2f2;
+}
+
+.user-list tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-list tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+.user-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.label-default {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-success {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.remove {
+  color: #d9534f;
+  cursor: pointer;
+}
+
+.remove:hover {
+  color: #c9302c;
+}
+
+/* Optional: Adjustments for better responsiveness */
+
+@media (max-width: 767px) {
+  .user-list th,
+  .user-list td {
+    font-size: 12px;
+  }
 }
