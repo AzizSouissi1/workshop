@@ -8,7 +8,7 @@ import { MainUserComponent } from './main-user/main-user.component';
 const routes: Routes = [
   { path: '', component: MainUserComponent, children: [{ path: 'users/:category', component: ListUserComponent }] },
   { path: 'users/:category/editUser/:id', component: UpdateUserComponent },
-  { path: 'addUser', component: AddUserComponent }
+  { path: 'users/:category/addUser', component: AddUserComponent }
 ];
 
 @NgModule({
